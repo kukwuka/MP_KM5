@@ -3,4 +3,4 @@ project(rand C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(rand 1.c ra.h ht.h)
+add_executable(rand result.c ra.h ht.h)

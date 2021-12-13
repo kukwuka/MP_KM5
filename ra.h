@@ -14,6 +14,17 @@ void find_max_min_average_in_range(int ***array, int n, int m);
 
 int **dynamic_array(size_t n, size_t m);
 
+double **dynamic_array_double(size_t n, size_t m);
+
+
+double **dynamic_array_double(size_t n, size_t m) {
+    double **array = (double **) malloc(n * sizeof(double *));
+    for (int i = 0; i < n; ++i) {
+        array[i] = (double *) malloc(m * sizeof(double *));
+    }
+    return array;
+}
+
 int **dynamic_array(size_t n, size_t m) {
     int **array = (int **) malloc(n * sizeof(int *));
     for (int i = 0; i < n; ++i) {
@@ -28,16 +39,12 @@ void generate_random_array(int ***array, int *n, int *m) {
 
 
     printf("Generate  with size n*m \n\r");
-    printf("Enter n size: \n\r");
-    scanf("%d", n);
-    printf("Enter m size: \n\r");
-    scanf("%d", m);
+
     *array = dynamic_array(*n, *m);
 
-    srand((int) time(NULL));
     for (int i = 0; i < *n; ++i) {
         for (int j = 0; j < *m; ++j) {
-            (*array)[i][j] = rand() % 0x63;
+            (*array)[i][j] = (rand() % 0x63)+1;
         }
     }
 
