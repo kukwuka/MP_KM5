@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "ht.h"
 
 void generate_random_array(int ***array, int *n, int *m);
